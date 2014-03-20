@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auction Homepage</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:void(0);">ABC Auction</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-left navbar-input-group" role="search" id="main_form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter product name" >
+                </div>
+                <button type="submit" class="btn btn-default" id="main_search">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+                <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping cart</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- / Navbar -->
+
+<div class="container">
+
+    <div class="row" id="main_carousel">
+        <!-- Featured Products -->
+
+        <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"
+             data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#featured-product-carousel" data-slide-to="1" class=""></li>
+                <li data-target="#featured-product-carousel" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="assets/img/promo-product-1.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="assets/img/promo-product-2.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="assets/img/promo-product-3.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#featured-product-carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#featured-product-carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+        <!-- / Featured Products -->
+    </div>
+    <br/><br/>
+    <div class="row" id="main">
+        <!-- Featured Products list with thumbnails and description  -->
+        <ul class="list-unstyled" id="featured_products">
+            <!-- function fillFeaturedProducts will be called when DOM is ready -->
+         </ul>
+         <!-- / Featured Products list with thumbnails and description  -->
+    </div>
+
+
+    <!-- Search Controls-->
+    <div class="row" id="search" hidden>
+        <ul class="breadcrumb">
+            <li><a id="link_home">Home</a></li>
+            <li class="active">Search</li>
+        </ul>
+
+        <form role="form">
+            <div class="form-group">
+                <label for="productTitle">Product</label>
+                <input type="text" class="form-control" id="productTitle" placeholder="Product title">
+            </div>
+            <div class="form-group">
+                <label for="categorySelect"></label>
+                <select class="form-control" id="categorySelect">
+                    <option value="" selected>Categories</option>
+                    <option value="one">One</option>
+                    <option value="two">Two</option>
+                    <option value="three">Three</option>
+                    <option value="four">Four</option>
+                    <option value="five">Five</option>
+                </select>
+            </div>
+            <div class="form-group">
+                
+            </div>
+
+
+
+
+
+
+            <button type="submit" class="btn btn-default" id="find">Find now</button>
+
+        </form>
+
+    </div>
+
+    <!-- Divider line between Search Controls and Search Results -->
+    <div class="row" id="search_horizontal divider">
+        <hr>
+    </div>
+
+    <!-- Search Results -->
+    <div class="row" id="search_results">
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <br/>
+        <a href="javascript:void(0)">Home</a> |
+        <a href="javascript:void(0)">Search</a> |
+        <a href="javascript:void(0)">About Us</a> |
+        <a href="javascript:void(0)">Terms of Service</a>
+        <br/><br/>
+    </footer>
+    <!-- / Footer -->
+
+</div>
+
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/misc.js"></script>
+<script>
+    $(document).ready(function() {
+        fillFeaturedProducts('assets/data/featured-products.json');
+    });
+</script>
+
+
+</body>
+</html>
